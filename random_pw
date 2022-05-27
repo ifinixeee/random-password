@@ -43,14 +43,13 @@ while True:
     
     print(f' New random password: {password}')
     print()
+    pyperclip.copy(password)
     print("Password has been copied to clipboard.")
     
     print()
     print("-----------------------------------------")
     print()
     
-    pyperclip.copy(password)
-    print()
     input("Press [Enter] to exit the program.")
 
     break
