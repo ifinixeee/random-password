@@ -1,8 +1,9 @@
 import random, string, pyperclip
 
 case = string.ascii_letters
+special = string.punctuation
 number = string.digits
-special = "({[]})!?$\#/"
+
 
 print("===========================================")
 print("Simple Random Password Generator")
