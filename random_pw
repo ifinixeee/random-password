@@ -1,11 +1,18 @@
-
 import random, string, pyperclip
-
-res1 = int(input("How many characters would you like to include?:"))
 
 case = string.ascii_letters
 number = string.digits
 special = "({[]})!?$\#/"
+
+print("===========================================")
+print("Simple Random Password Generator")
+print("===========================================")
+print()
+
+res1 = int(input("How many characters would you like to include?: "))
+print()
+print("-------------------------------------------")
+print()
 
 len = res1
 
@@ -16,7 +23,8 @@ while True:
     response = ["yes","y","no","n"]
 
     while res2 not in response:
-        res2 = str(input("Would you like to include special characters?:")).lower()
+        res2 = str(input("Would you like to include special characters?: ")).lower()
+        print()
 
     if res2 == "yes" or res2 == "y":
         print("Special characters included")
@@ -27,11 +35,22 @@ while True:
         all = case+number
 
     password ="".join(random.sample(all,len))
-
+    
+    print()
+    print("-----------------------------------------")
+    print()
+    
     print(f' New random password: {password}')
-    print("Password is copied to clipboard.")
+    print()
+    print("Password has been copied to clipboard.")
+    
+    print()
+    print("-----------------------------------------")
+    print()
     
     pyperclip.copy(password)
+    print()
+    input("Press [Enter] to exit the program.")
 
     break
 
