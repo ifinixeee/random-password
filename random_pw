@@ -3,9 +3,7 @@ import random, string, pyperclip
 
 res1 = int(input("How many characters would you like to include?:"))
 
-lwcase = string.ascii_lowercase
-upcase = string.ascii_uppercase
-
+case = string.ascii_letters
 number = string.digits
 special = "({[]})!?$\#/"
 
@@ -22,11 +20,11 @@ while True:
 
     if res2 == "yes" or res2 == "y":
         print("Special characters included")
-        all = lwcase+upcase+number+special
+        all = case+number+special
      
     elif res2 == "no" or res2 == "n":
         print("Special characters excluded")
-        all = lwcase+upcase+number
+        all = case+number
 
     password ="".join(random.sample(all,len))
 
