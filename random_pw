@@ -69,7 +69,7 @@ def tryge():
             input("Press [Enter] to exit the program.")
             break
         else:
-            print("Invalid iutput, please try again and answer with [yes/y/no/n].")
+            print("Invalid intput, please try again and answer with [yes/y/no/n].")
             print()
             y = 1
 
