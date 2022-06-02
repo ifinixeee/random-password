@@ -4,57 +4,77 @@ case = string.ascii_letters
 special = string.punctuation
 number = string.digits
 
-
 print("===========================================")
 print("Simple Random Password Generator")
 print("===========================================")
 print()
 
-res1 = int(input("How many characters would you like to include?: "))
-print()
-print("-------------------------------------------")
-print()
+def pwgen():
+    res1 = int(input("How many characters would you like to include?: "))
+    print()
+    print("-------------------------------------------")
+    print()
 
-len = res1
+    a = 1
 
-while True:
+    while a == 1:
 
-    res2 = None
+        res2 = None
 
-    response = ["yes","y","no","n"]
+        response = ["yes", "y", "no", "n"]
 
-    while res2 not in response:
-        res2 = str(input("Would you like to include special characters?: ")).lower()
+        while res2 not in response:
+            res2 = str(input("Would you like to include special characters?: ")).lower()
+            print()
+
+        if res2 == "yes" or res2 == "y":
+            print("Special characters included")
+            all = case + number + special
+
+        elif res2 == "no" or res2 == "n":
+            print("Special characters excluded")
+            all = case + number
+
+        password = "".join(random.sample(all, res1))
+
+        print()
+        print("-----------------------------------------")
         print()
 
-    if res2 == "yes" or res2 == "y":
-        print("Special characters included")
-        all = case+number+special
-     
-    elif res2 == "no" or res2 == "n":
-        print("Special characters excluded")
-        all = case+number
+        print(f'New random password: {password}')
+        print()
+        pyperclip.copy(password)
+        print("Password has been copied to clipboard.")
+        print()
 
-    password ="".join(random.sample(all,len))
-    
-    print()
-    print("-----------------------------------------")
-    print()
-    
-    print(f' New random password: {password}')
-    print()
-    pyperclip.copy(password)
-    print("Password has been copied to clipboard.")
-    
-    print()
-    print("-----------------------------------------")
-    print()
-    
-    input("Press [Enter] to exit the program.")
+        break
 
-    break
+print()
+print("-----------------------------------------")
+print()
 
+def tryge():
+    y = 1
+    while y == 1:
+        res = input("Do you wish to use this program again? [yes/y/no/n]: ")
+        res = res.upper()
 
+        if res == "YES" or res == "Y":
+            print()
+            print("-----------------------------------------")
+            print()
+            return True
+        elif res == "NO" or res == "N":
+            print()
+            input("Press [Enter] to exit the program.")
+            break
+        else:
+            print("Invalid iutput, please try again and answer with [yes/y/no/n].")
+            print()
+            y = 1
 
+pwgen()
 
+while tryge():
+    pwgen()
 
